@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         安大教务四分制绩点转换
 // @namespace    https://www.skymkmk.com
-// @version      1.1
+// @version      1.2
 // @description  将你的平均绩点从五分制转换为四分制，方便你比对心仪海外高校
 // @author       skymkmk
 // @match        *://jwxt0.ahu.edu.cn/*
@@ -163,7 +163,5 @@
     for (const [key, value] of WESDecreasedCredit)
       board.appendChild(nodeGen(key + "，降重后的学分为" + value));
   }
-  setTimeout(() => {
-    window.parent.document.getElementById("iframeautoheight").style.height = "";
-  }, 1000);
+  window.parent.document.getElementById("iframeautoheight").setAttribute("height", "");
 })();

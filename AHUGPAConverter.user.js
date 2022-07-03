@@ -1,7 +1,10 @@
 // ==UserScript==
 // @name         安大教务四分制绩点转换
-// @namespace    https://www.skymkmk.com
-// @version      1.2
+// @namespace    https://www.skymkmk.com/AHUGPAConverter
+// @homepage     https://greasyfork.org/zh-CN/scripts/447311-%E5%AE%89%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9B%9B%E5%88%86%E5%88%B6%E7%BB%A9%E7%82%B9%E8%BD%AC%E6%8D%A2
+// @supportURL   https://github.com/skymkmk/AHUGPAConverter/issues
+// @supportURL   mailto:admin@skymkmk.com
+// @version      1.3.0
 // @description  将你的平均绩点从五分制转换为四分制，方便你比对心仪海外高校
 // @author       skymkmk
 // @match        *://jwxt0.ahu.edu.cn/*
@@ -10,7 +13,8 @@
 // @match        *://jwxt3.ahu.edu.cn/*
 // @match        *://jwxt4.ahu.edu.cn/*
 // @match        *://wvpn.ahu.edu.cn/https/77726476706e69737468656265737421fae05988777e69586b468ca88d1b203b/*
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @updateURL    https://greasyfork.org/scripts/447311-%E5%AE%89%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9B%9B%E5%88%86%E5%88%B6%E7%BB%A9%E7%82%B9%E8%BD%AC%E6%8D%A2/code/%E5%AE%89%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9B%9B%E5%88%86%E5%88%B6%E7%BB%A9%E7%82%B9%E8%BD%AC%E6%8D%A2.user.js
+// @downloadURL  https://greasyfork.org/scripts/447311-%E5%AE%89%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9B%9B%E5%88%86%E5%88%B6%E7%BB%A9%E7%82%B9%E8%BD%AC%E6%8D%A2/code/%E5%AE%89%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9B%9B%E5%88%86%E5%88%B6%E7%BB%A9%E7%82%B9%E8%BD%AC%E6%8D%A2.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -154,7 +158,10 @@
     }
     avgPKU = Math.round((sumPKU / creditPKU) * 100) / 100;
     avgWES = Math.round((sumWES / creditWES) * 100) / 100;
-    board.appendChild(nodeGen("四分制绩点", "blue"));
+    board.appendChild(nodeGen("四分制绩点&emsp;版本 " + GM_info.script.version.toString(), "blue"));
+    board.appendChild(nodeGen("作者&emsp;<a target=\"_blank\" href=\"https://www.skymkmk.com\">天空skymkmk</a>"));
+    board.appendChild(nodeGen("联系我：<a target=\"_blank\" href=\"https://github.com/skymkmk/AHUGPAConverter/issues\">Github Issues</a>（大陆可能无法访问）"));
+    board.appendChild(nodeGen("邮箱&emsp;<a target=\"_blank\" href=\"mailto:admin@skymkmk.com\">admin@skymkmk.com</a>"));
     board.appendChild(nodeGen("北大算法：" + avgPKU.toString(), "red"));
     board.appendChild(nodeGen("WES 算法：" + avgWES.toString(), "red"));
     board.appendChild(nodeGen("WES 算法排除的课程：", "red"));
